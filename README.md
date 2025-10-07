@@ -26,9 +26,88 @@ UERANSIM
 
 **Installation**
 
-git clone https://github.com/username/5g-nwdaf-security-monitor.git
-cd 5g-nwdaf-security-monitor
+
+### **Step 1: Clone the Repository**
+
+```bash
+git clone https://github.com/Lakshmirnr/NWDAF.git
+cd NWDAF
+````
+
+---
+
+### **Step 2: Set Up a Python Virtual Environment**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate     # For Linux/Mac
+venv\Scripts\activate        # For Windows
+```
+
+---
+
+### **Step 3: Install Required Dependencies**
+
+```bash
+pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+---
+
+### **Step 4: Configure Environment Variables**
+
+```bash
+cp .env.example .env
+nano .env
+```
+
+Or set variables directly:
+
+```bash
+export NWDAF_DB_URL="mongodb://localhost:27017/nwdaf"
+export NWDAF_PORT=8080
+```
+
+---
+
+### **Step 5: Initialize Database (If Required)**
+
+Make sure your database service (e.g., MongoDB) is running:
+
+```bash
+sudo systemctl start mongod
+```
+
+---
+
+### **Step 6: Run NWDAF Service**
+
+```bash
+python main.py
+```
+
+Or, if a startup script is available:
+
+```bash
+./run.sh
+```
+
+---
+
+### **Step 7: Verify Installation**
+
+Check if the NWDAF service is active:
+
+```bash
+curl http://localhost:8080/health
+```
+
+Expected output:
+
+```bash
+{"status": "NWDAF running successfully"}
+```
 
 
 **Usage**
