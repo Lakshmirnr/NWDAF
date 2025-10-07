@@ -1,0 +1,51 @@
+# Basic configuration for NWDAF-Secure
+service:
+  host: 0.0.0.0
+  port: 8088
+  log_level: INFO
+
+paths:
+  data_dir: app/data/sample_traces
+  reports_dir: app/data/reports
+
+analysis:
+  window_size: 200         # number of events per window
+  ngap_abnormal_procedures: [ 'HANDOVER_FAILURE', 'AUTH_FAILURE' ]
+  pfcp_rate_threshold_per_min: 120
+  http2_burst_threshold: 300
+  entropy_numeric_bins: 10
+
+exposure:
+  weights:
+    anomalies: 0.6
+    entropy: 0.4
+  clamp_min: 0
+  clamp_max: 100
+
+
+metrics:
+  mode: GLOBAL   # GLOBAL or PER_UE
+  signaling_overload:
+    mu: 300
+    sigma: 80
+    alpha: 2.0
+  session_state:
+    lambda: 0.8
+  temporal_correlation:
+    bin_seconds: 1
+    pairs: [["N2","SBI"], ["N4","SBI"], ["N2","N4"]]
+  protocol_semantics:
+    grammar:
+      N2_procedures: ["INITIAL_CONTEXT_SETUP","HANDOVER_PREP","AUTH"]
+      SBI_paths: ["/nudm-sdm/v2","/npcf-policyauth/v1","/nnssf-nsselection/v1"]
+  entropy_drift:
+    baseline: 1.2
+  composite_weights:
+    w1: 0.25
+    w2: 0.20
+    w3: 0.20
+    w4: 0.20
+    w5: 0.15
+  threshold:
+    high: 85
+    medium: 70
