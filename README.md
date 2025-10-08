@@ -100,7 +100,7 @@ Or, if a startup script is available:
 Check if the NWDAF service is active:
 
 ```bash
-curl http://localhost:8080/health
+curl http://localhost:8080/nwdaf
 ```
 
 Expected output:
