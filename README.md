@@ -131,7 +131,9 @@ Open5GS
 **License**
 
    Copyright © 2025 Lakshmi R Nair
+   
    Copyright © 2025 Preetam Mukherjee
+   
    Copyright © 2025 Adithya Anil
 
    Licensed under the Apache License, Version 2.0 (the "License");
