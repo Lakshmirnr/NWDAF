@@ -127,3 +127,16 @@ Automatic enforcement actions
 Open5GS
 
 3GPP TS 23.501, TS 23.502, TS 33.502
+
+**License**
+
+   Copyright © 2025 Lakshmi R Nair
+   Copyright © 2025 Preetam Mukherjee
+   Copyright © 2025 Adithya Anil
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+
+       http://www.apache.org/licenses/LICENSE-2.0
